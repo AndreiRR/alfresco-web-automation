@@ -38,8 +38,9 @@ public class DeleteFolderUISuite extends BaseTests {
       }
     }
 
-    super.beforeEach();
+    entries = nodesPrecondition.createFolderDetails();
 
+    super.beforeEach();
     loginPage = new LoginPage(driver);
     homePage = new HomePage(driver);
 
@@ -52,7 +53,6 @@ public class DeleteFolderUISuite extends BaseTests {
 
   @Test
   public void shouldSuccessfullyDeleteFolder() {
-    entries = nodesPrecondition.createFolderDetails();
     homePage.clickOptionsButton();
     homePage.clickDelete();
 

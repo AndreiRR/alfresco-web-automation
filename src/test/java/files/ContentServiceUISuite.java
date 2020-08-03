@@ -28,6 +28,7 @@ public class ContentServiceUISuite extends BaseTests {
 
   private String id;
   private String folderName = "AndreiRR";
+  private String folderDescription = "description";
 
   @BeforeEach
   public void beforeEach() {
@@ -55,7 +56,7 @@ public class ContentServiceUISuite extends BaseTests {
 
   @Test
   public void shouldSuccessfullyCreateNewFolder() {
-    homePage.createFolder(folderName, "desc");
+    homePage.createFolder(folderName, folderDescription);
 
     assertTrue(homePage.isFolderImageDisplayed(),"Folder image not displayed");
     assertEquals(folderName, homePage.getFolderName(folderName).getText(),"Folder name not equals with expected");
